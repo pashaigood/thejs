@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			body, html {
+				padding:0;
+				margin:0;
+			}
+		</style>
+		<!--<script type="text/javascript" src="js/the.js"></script>-->
+		<script type="text/javascript" src="js/thejs/class_factory.js"></script>
+		<script type="text/javascript" src="js/thejs/context.js"></script>
+	</head>
+	<body>
+		<h1>it`s work!</h1>
+		<h2>it`s work!</h2>
+		<h3>it`s work!</h3>
+		<div><h4>it`s work!</h4></div>
+		<script type="text/javascript">
+			var ig = {};
+			ig.Test = function() {
+				private. number = 1;
+				public. string = 'text';
+				
+				public. Test = function() {
+					self.test();
+				}
+				
+				public. test = function() {
+					console.log(self.number, self.string);
+					self.number += 1;
+				}
+			}
+			
+			ig.Test = class_factory(ig.Test, 'Test', 'ig');
+			var test = new ig.Test();
+			var test2 = new ig.Test();
+			test.test();
+		</script>
+	</body>
+</html>
