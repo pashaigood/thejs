@@ -1,7 +1,8 @@
 function class_factory(class_data, class_name, namespace) {
 	var params = {
-			'private' : {},
-			'public' : {}
+			my : {},
+			pub : {},
+			our : {}
 		},
 		class_body,
 		postfix = body_cut(class_factory.postfix),
@@ -19,7 +20,7 @@ function class_factory(class_data, class_name, namespace) {
 		postfix.replace(class_name_rgx, class_name)
 	);
 	
-	for (var i in params.public) {
+	for (var i in params.pub) {
 		var rgx = new RegExp("self\\s*.\\s*"+i, 'gm');
 		class_body = class_body.replace(rgx, "this."+i);
 	}
@@ -28,9 +29,9 @@ function class_factory(class_data, class_name, namespace) {
 }
 
 class_factory.prefix = function() {
-	var public = {},
-		private = {},
-		static = {},
+	var pub = {},
+		my = {},
+		our = {},
 		_ = $;
 }
 
@@ -38,13 +39,14 @@ class_factory.postfix = function() {
 	var args = [],
 		i = 0,
 		length = arguments.length,
-		self = private;
-	for (i in public) {
-		_.prototype[i] =  public[i];
+		self = my;
+	for (i in pub) {
+		_.prototype[i] =  pub[i];
 	}
 	
 	for (i; i < length; i++){
 		args.push(arguments[i]);
 	}
-	return public._.apply(this, args);
+	
+	return pub._.apply(this, args);
 }

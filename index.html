@@ -19,20 +19,21 @@
 		<script type="text/javascript">
 			var ig = {};
 			ig.Test = function() {
-				private. number = 1;
-				public. string = 'text';
+				my. number = 1;
+				pub. string = 'text';
 				
-				public. Test = function() {
+				pub. Test = function() {
 					self.test();
 				}
 				
-				public. test = function() {
+				pub. test = function() {
 					console.log(self.number, self.string);
 					self.number += 1;
 				}
 			}
 			
 			ig.Test = class_factory(ig.Test, 'Test', 'ig');
+			
 			var test = new ig.Test();
 			var test2 = new ig.Test();
 			test.test();
