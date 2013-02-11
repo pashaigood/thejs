@@ -1,7 +1,9 @@
-namespace('test.subtest', {
-	Class3 : function() {
-		public. Class3 = function() {
-			
-		}
-	}
-})
+namespace('test.subtest',
+{
+    Class3 : {
+        Class3 : function()
+        {
+            
+        }
+    }
+});
