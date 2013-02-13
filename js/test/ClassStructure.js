@@ -5,7 +5,7 @@ namespace('test', function() { return {
        test.subtest.Class2
 	],
 	//Class description
-	ClassStructure : { extend : [Array, test.subtest.Class2],
+	ClassStructure : { extend : [Array, test.subtest.Class2, Container, EventDispatcher],
         //Class static method
         our : {
             POPA : 1,
@@ -26,7 +26,7 @@ namespace('test', function() { return {
                 console.log('on popa');
             });
             
-            console.log(this.push);
+            $('h1').draggable().css('cursor', 'move');
         },
         //Class method
         test1 : function(what)
