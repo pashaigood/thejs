@@ -1,11 +1,11 @@
-namespace('test', 
-{
+namespace('test', function() { return {
     //class require
 	require : [
-       'test.subtest.Class3'
+       test.subtest.Class3,
+       test.subtest.Class2
 	],
 	//Class description
-	ClassStructure : { extend : [Array],
+	ClassStructure : { extend : [Array, test.subtest.Class2],
         //Class static method
         our : {
             POPA : 1,
@@ -21,6 +21,7 @@ namespace('test',
         //Class constructor
         ClassStructure : function()
         {
+            this.Super();
             this.on('popa', function(){
                 console.log('on popa');
             });
@@ -34,4 +35,4 @@ namespace('test',
             console.log(what);
         }
     }
-});
+}});
