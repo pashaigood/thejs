@@ -21,12 +21,17 @@ namespace('test',
         //Class constructor
         ClassStructure : function()
         {
+            this.on('popa', function(){
+                console.log('on popa');
+            });
+            
             console.log(this.push);
         },
         //Class method
-            test1 : function(what)
-            {
-                console.log(what);
-            }
+        test1 : function(what)
+        {
+            this.play('popa');
+            console.log(what);
         }
+    }
 });
