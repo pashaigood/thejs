@@ -1,11 +1,11 @@
-namespace('test', function() { return {
+ns('test', /*function() { return*/ {
     //class require
 	require : [
-       test.subtest.Class3,
-       test.subtest.Class2
+       // 'test.subtest.Class3',
+       // 'test.subtest.Class2'
 	],
 	//Class description
-	ClassStructure : { extend : [Array, test.subtest.Class2, Container, EventDispatcher],
+	ClassStructure : { extend : [Container, EventDispatcher],
         //Class static method
         our : {
             POPA : 1,
@@ -21,12 +21,14 @@ namespace('test', function() { return {
         //Class constructor
         ClassStructure : function()
         {
-            this.Super();
-            this.on('popa', function(){
-                console.log('on popa');
-            });
+            console.log('data');
+            // this.Super();
+            // this.on('popa', function(){
+                // console.log('on popa');
+            // });
             
-            $('h1').draggable().css('cursor', 'move');
+            
+            // $('h1').draggable().css('cursor', 'move');
         },
         //Class method
         test1 : function(what)
@@ -35,4 +37,4 @@ namespace('test', function() { return {
             console.log(what);
         }
     }
-}});
+}/*}*/);
