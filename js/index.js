@@ -1,25 +1,26 @@
-include(
-    'jquery.index',
-    // 'jquery.ui.index',
-	'test.ClassStructure',
+// include(
+    // 'todo.ToDoMVC',
+	// function() {
+	    // var todo_mvc = new todo.ToDoMVC();
+	// }
+// );
+// 
+
+the.js(
+    'todo.ToDoMVC',
+    'jquery.Jquery',
 	function() {
-		var popa = new test.ClassStructure();
-		// popa.toString = function() {
-		    // // console.profile('test.ClassStructure');
-		    // return false;
-		// }
-// 		
-		// popa.valueOf = function() {
-		    // console.log('run why');
-		    // return "dad";
-		// }
-		
-		// var popa2 = new test.ClassStructure();
-		
-		// popa.addChild(popa2);
-		// popa.test1('out');
-		// popa.superTest();
-	    console.log(test.ClassStructure.POPA);
-	    console.log(popa);
+	    var todo_mvc = new todo.ToDoMVC();
 	}
 );
+// namespace('todo', {
+    // require : [
+        // 'todo.ToDoMVC'
+    // ],
+//     
+    // Index : {
+        // Index : function() {
+            // console.log(todo);
+        // }
+    // }
+// })
