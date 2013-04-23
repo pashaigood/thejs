@@ -1,10 +1,17 @@
 namespace('todo.controller', {
     require : [
-        'ig.Controller'
+        'todo.model.Element',
+        'todo.view.List'
     ],
     List : { extend : [ig.Controller],
         List : function() {
             
+            this.Super(
+                new todo.model.Element(),
+                [],
+                new todo.view.List(),
+                []
+            )
         }
     } 
 });

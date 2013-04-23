@@ -40,7 +40,7 @@ namespace('ig', {
                     if (typeof(view[function_name]) == 'function') {
                         (function(event_name, function_name) {
                             model.on(event_name, function() {
-                                self._call((function_name, args);
+                                self._call(function_name, args);
                                 view[function_name].apply(view, arguments);
                             });
                         })(event_name, function_name);
@@ -63,7 +63,7 @@ namespace('ig', {
                     if (typeof(model[function_name]) == 'function') {
                         (function(event_name, function_name) {
                             view.on(event_name, function() {
-                                self._call((function_name, args);
+                                self._call(function_name, args);
                                 model[function_name].apply(model, arguments);
                             });
                         })(event_name, function_name);
